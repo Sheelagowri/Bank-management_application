@@ -6,6 +6,10 @@
 </p>
 
 <p>
+<td><%= image_tag(@book.image, style: 'width:10% ')  if @book.image.attached?%></td>
+</p>
+
+<p>
   <strong>Creation date:</strong>
   <%= @book.creation_date %>
 </p>

@@ -1,4 +1,4 @@
-
+<p id="notice"><%= notice %></p>
 
 <h1>Books</h1>
 
@@ -6,7 +6,8 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Creation date</th>
+      <th>Image</th>
+      <th>Creation date</th> 
       <th>Content</th>
       <th>Category</th>
       <th colspan="3"></th>
@@ -17,12 +18,11 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
+        <td><%= image_tag(book.image, style: 'width:10% ', align: 'center')  if book.image.attached?%></td>
         <td><%= book.creation_date %></td>
         <td><%= book.content %></td>
-        <td><%= book.category.category%></td>
+        <td><%= book.category.category_name%></td>
         <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure you want to delete this ? ' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,3 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path %>

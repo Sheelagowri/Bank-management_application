@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'home', to: 'home#index'
+  get 'home', to: 'home#index' 
+  get 'admin', to: 'books#index'
   devise_for :users
   resources :categories
   resources :books
